@@ -1,43 +1,48 @@
+#include "MyString.h"
 #include <iostream>
-
 using namespace std;
 
-class calc {
-private:
-    int num1 = 0, num2 = 0;
-public:
-    void write(int a, int b) {
-        cout << "nums are initialise" << endl;
-        num1 = a;
-        num2 = b;
-    }
-    int plus() {
-        return num1 + num2;
-    }
-    int minus() {
-        return num1 - num2;
-    }
-    int divide() {
-        return num1 / num2;
-    }
-    int multi() {
-        return num1 * num2;
-    }
-    void print() {
-        cout << "plus: " << plus() <<
-            "\nminus: " << minus() <<
-            "\ndivide: " << divide() <<
-            "\nmulti: " << multi() << endl;
-    }
+MyString::Mystring() {
+    lenght = 80;
+    str = new char[lenght];
+}
 
-};
+MyString::Mystring(int size) {
+    lenght = size;
+    str = new char[lenght];
+}
 
-int main()
-{
-    int temp1, temp2;
-    cin >> temp1 >> temp2;
-    calc obj1;
-    obj1.write(temp1, temp2);
-    obj1.print();
-    return 0;
+MyString::Mystring() {
+    lenght = strlen(s);
+    str = new char[lenght + 1];
+    srcpy_s(str, lengt + 1, s);
+}
+
+MyString::Mystring() {
+    lenght = obj.lengt;
+    str = new char[lenght + 1];
+    srcpy_s(str, lengt + 1, obj.str);
+}
+
+MyString::~Mystring() {
+    delete[] str;
+}
+
+void MyString::Print() {
+    cout << str << endl;
+}
+
+void MyString::Input() {
+
+}
+bool MyString::MyStrStr(const char* st) {
+    char* temp = strstr(str,st)
+    if (temp != nullptr) {
+        return true;
+    }
+    return false;
+}
+
+int main() {
+
 }
